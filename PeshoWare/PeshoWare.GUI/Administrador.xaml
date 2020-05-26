@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Administrador" Height="600" Width="600" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TabControl Background="#B2DFBD">
-            <TabItem Header="Usuarios" Background="#00796B">
+        <TabControl Background="DarkSlateGray">
+            <TabItem Header="Usuarios" Background="Gray" Foreground="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -16,39 +16,39 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <WrapPanel Grid.Row="0">
-                        <Button x:Name="btnUsuarioNuevo" Width="80" Click="btnUsuarioNuevo_Click" Background="#00796B">
+                        <Button x:Name="btnUsuarioNuevo" Width="80" Click="btnUsuarioNuevo_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Nuevo</Label>
+                                <Label Foreground="White" >Nuevo</Label>
                                 <Image Source="/Imagenes/user_add.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnUsuarioEditar" Width="80" Click="btnUsuarioEditar_Click" Background="#00796B">
+                        <Button x:Name="btnUsuarioEditar" Width="80" Click="btnUsuarioEditar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Editar</Label>
+                                <Label Foreground="White" >Editar</Label>
                                 <Image Source="/Imagenes/user_edit.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnUsuarioGuardar" Width="80" Click="btnUsuarioGuardar_Click" Background="#00796B">
+                        <Button x:Name="btnUsuarioGuardar" Width="80" Click="btnUsuarioGuardar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Guardar</Label>
+                                <Label Foreground="White" >Guardar</Label>
                                 <Image Source="/Imagenes/user_go.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnUsuarioCancelar" Width="80" Click="btnUsuarioCancelar_Click" Background="#00796B">
+                        <Button x:Name="btnUsuarioCancelar" Width="80" Click="btnUsuarioCancelar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Cancelar</Label>
+                                <Label Foreground="White" >Cancelar</Label>
                                 <Image Source="/Imagenes/cancel.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnUsuarioEliminar" Width="80" Click="btnUsuarioEliminar_Click" Background="#00796B">
+                        <Button x:Name="btnUsuarioEliminar" Width="80" Click="btnUsuarioEliminar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Eliminar</Label>
+                                <Label Foreground="White" >Eliminar</Label>
                                 <Image Source="/Imagenes/user_delete.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnUsuarioRegresar" Width="80" Click="BtnUsuarioRegresar_Click" Background="#00796B">
+                        <Button x:Name="btnUsuarioRegresar" Width="80" Click="BtnUsuarioRegresar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Menu</Label>
+                                <Label Foreground="White" >Menu</Label>
                                 <Image Source="/Imagenes/arrow_undo.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
@@ -100,7 +100,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="Clientes" Background="#00796B">
+            <TabItem Header="Clientes" Background="Gray" Foreground="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -108,39 +108,39 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <WrapPanel Grid.Row="0">
-                        <Button x:Name="btnClienteNuevo" Width="80" Click="BtnClienteNuevo_Click" Background="#00796B">
+                        <Button x:Name="btnClienteNuevo" Width="80" Click="BtnClienteNuevo_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Nuevo</Label>
+                                <Label Foreground="White" >Nuevo</Label>
                                 <Image Source="/Imagenes/book_add.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnClienteEditar" Width="80" Click="BtnClienteEditar_Click" Background="#00796B">
+                        <Button x:Name="btnClienteEditar" Width="80" Click="BtnClienteEditar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Editar</Label>
+                                <Label Foreground="White" >Editar</Label>
                                 <Image Source="/Imagenes/book_edit.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnClienteGuardar" Width="80" Click="BtnClienteGuardar_Click" Background="#00796B">
+                        <Button x:Name="btnClienteGuardar" Width="80" Click="BtnClienteGuardar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Guardar</Label>
+                                <Label Foreground="White" >Guardar</Label>
                                 <Image Source="/Imagenes/book_go.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnClienteCancelar" Width="80" Click="BtnClienteCancelar_Click" Background="#00796B">
+                        <Button x:Name="btnClienteCancelar" Width="80" Click="BtnClienteCancelar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Cancelar</Label>
+                                <Label Foreground="White" >Cancelar</Label>
                                 <Image Source="/Imagenes/cancel.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnClienteEliminar" Width="80" Click="BtnClienteEliminar_Click" Background="#00796B">
+                        <Button x:Name="btnClienteEliminar" Width="80" Click="BtnClienteEliminar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Eliminar</Label>
+                                <Label Foreground="White" >Eliminar</Label>
                                 <Image Source="/Imagenes/book_delete.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnClienteRegresar" Width="80" Click="BtnClienteRegresar_Click" Background="#00796B">
+                        <Button x:Name="btnClienteRegresar" Width="80" Click="BtnClienteRegresar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Menu</Label>
+                                <Label Foreground="White" >Menu</Label>
                                 <Image Source="/Imagenes/arrow_undo.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
@@ -200,7 +200,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="Prestamos" Background="#00796B">
+            <TabItem Header="Prestamos" Background="Gray" Foreground="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -209,35 +209,35 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <WrapPanel Grid.Row="0">
-                        <Button x:Name="btnPrestamoNuevo" Width="80" Click="BtnPrestamoNuevo_Click" Background="#00796B">
+                        <Button x:Name="btnPrestamoNuevo" Width="80" Click="BtnPrestamoNuevo_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Nuevo</Label>
+                                <Label Foreground="White" >Nuevo</Label>
                                 <Image Source="/Imagenes/date_add.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
 
-                        <Button x:Name="btnPrestamoGuardar" Width="80" Click="BtnPrestamoGuardar_Click" Background="#00796B">
+                        <Button x:Name="btnPrestamoGuardar" Width="80" Click="BtnPrestamoGuardar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Guardar</Label>
+                                <Label Foreground="White" >Guardar</Label>
                                 <Image Source="/Imagenes/date_go.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnPrestamoCancelar" Width="80" Click="BtnPrestamoCancelar_Click" Background="#00796B">
+                        <Button x:Name="btnPrestamoCancelar" Width="80" Click="BtnPrestamoCancelar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Cancelar</Label>
+                                <Label Foreground="White" >Cancelar</Label>
                                 <Image Source="/Imagenes/cancel.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnPrestamoEliminar" Width="80" Click="btnPrestamoEliminar_Click_1" Background="#00796B">
+                        <Button x:Name="btnPrestamoEliminar" Width="80" Click="btnPrestamoEliminar_Click_1" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Eliminar</Label>
+                                <Label Foreground="White" >Eliminar</Label>
                                 <Image Source="/Imagenes/note_delete.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
 
-                        <Button x:Name="btnPrestamosRegresar" Width="80" Click="BtnPrestamosRegresar_Click" Background="#00796B">
+                        <Button x:Name="btnPrestamosRegresar" Width="80" Click="BtnPrestamosRegresar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Menu</Label>
+                                <Label Foreground="White" >Menu</Label>
                                 <Image Source="/Imagenes/arrow_undo.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
@@ -295,7 +295,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="Pagos" Background="#00796B">
+            <TabItem Header="Pagos" Background="Gray" Foreground="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -310,28 +310,28 @@
                                 <Image Source="/Imagenes/note_add.png" Height="16"></Image>
                             </StackPanel>
                         </Button>-->
-                        <Button x:Name="btnPagoEditar" Width="80" Click="BtnPagoEditar_Click" Background="#00796B">
+                        <Button x:Name="btnPagoEditar" Width="80" Click="BtnPagoEditar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Nuevo</Label>
+                                <Label Foreground="White" >Nuevo</Label>
                                 <Image Source="/Imagenes/note_add.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnPagoGuardar" Width="80" Click="BtnPagoGuardar_Click" Background="#00796B">
+                        <Button x:Name="btnPagoGuardar" Width="80" Click="BtnPagoGuardar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Guardar</Label>
+                                <Label Foreground="White" >Guardar</Label>
                                 <Image Source="/Imagenes/note_go.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnPagoCancelar" Width="80" Click="BtnPagoCancelar_Click" Background="#00796B">
+                        <Button x:Name="btnPagoCancelar" Width="80" Click="BtnPagoCancelar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Cancelar</Label>
+                                <Label Foreground="White" >Cancelar</Label>
                                 <Image Source="/Imagenes/cancel.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
                         
-                        <Button x:Name="btnPagosRegresar" Width="80" Click="BtnPagosRegresar_Click" Background="#00796B">
+                        <Button x:Name="btnPagosRegresar" Width="80" Click="BtnPagosRegresar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Menu</Label>
+                                <Label Foreground="White" >Menu</Label>
                                 <Image Source="/Imagenes/arrow_undo.png" Height="16"></Image>
                             </StackPanel>
                         </Button>

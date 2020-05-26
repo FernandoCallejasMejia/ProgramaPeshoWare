@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Tienda" Height="600" Width="1096" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TabControl Background="#B2DFBD">
-            <TabItem Header="Productos" Background="#00796B">
+        <TabControl Background="DarkSlateGray">
+            <TabItem Header="Productos" Foreground="White" Background="Gray">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -19,39 +19,39 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <WrapPanel Grid.Row="0">
-                        <Button x:Name="btnNuevoProducto" Width="80" Click="BtnNuevoProducto_Click" Background="#00796B">
+                        <Button x:Name="btnNuevoProducto" Width="80" Click="BtnNuevoProducto_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Nuevo</Label>
+                                <Label Foreground="White">Nuevo</Label>
                                 <Image Source="/Imagenes/cup_add.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnEditarProducto" Width="80" Click="BtnEditarProducto_Click" Background="#00796B">
+                        <Button x:Name="btnEditarProducto" Width="80" Click="BtnEditarProducto_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Editar</Label>
+                                <Label Foreground="White">Editar</Label>
                                 <Image Source="/Imagenes/cup_edit.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnGuardarProducto" Width="80" Click="BtnGuardarProducto_Click" Background="#00796B">
+                        <Button x:Name="btnGuardarProducto" Width="80" Click="BtnGuardarProducto_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Guardar</Label>
+                                <Label Foreground="White">Guardar</Label>
                                 <Image Source="/Imagenes/cup_go.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnCancelarProducto" Width="80" Click="BtnCancelarProducto_Click" Background="#00796B">
+                        <Button x:Name="btnCancelarProducto" Width="80" Click="BtnCancelarProducto_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Cancelar</Label>
+                                <Label Foreground="White">Cancelar</Label>
                                 <Image Source="/Imagenes/cancel.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnEliminarProducto" Width="80" Click="BtnEliminarProducto_Click" Background="#00796B">
+                        <Button x:Name="btnEliminarProducto" Width="80" Click="BtnEliminarProducto_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Eliminar</Label>
+                                <Label Foreground="White">Eliminar</Label>
                                 <Image Source="/Imagenes/cup_delete.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnProductosRegresar" Width="80" Click="BtnProductosRegresar_Click" Background="#00796B">
+                        <Button x:Name="btnProductosRegresar" Width="80" Click="BtnProductosRegresar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Menu</Label>
+                                <Label Foreground="White">Menu</Label>
                                 <Image Source="/Imagenes/arrow_undo.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
@@ -143,7 +143,7 @@
 
 
 
-            <TabItem Header="Ventas" Background="#00796B">
+            <TabItem Header="Ventas" Background="Gray" Foreground="White">
                 <Grid RenderTransformOrigin="0.758,0.481" Margin="26,4,-4,-4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -157,15 +157,15 @@
                         </Grid.RowDefinitions>
                         <WrapPanel Orientation="Vertical" Margin="-23,0,0,25" Grid.RowSpan="3">
                             <StackPanel Orientation="Horizontal" >
-                                <Label FontWeight="Bold" Width="98">Fecha:</Label>
+                                <Label Foreground="White" FontWeight="Bold" Width="98">Fecha:</Label>
                                 <TextBox x:Name="txbFechaVenta" Height="20" Width="179" IsReadOnly="True"></TextBox>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" >
-                                <Label FontWeight="Bold" Width="97">Folio:</Label>
+                                <Label Foreground="White"  FontWeight="Bold" Width="97">Folio:</Label>
                                 <TextBox x:Name="txbFolioVenta" Height="20" Width="180" IsReadOnly="True"></TextBox>
                             </StackPanel>
                             <WrapPanel Orientation="Horizontal" Width="280" >
-                                <Label FontWeight="Bold" Width="97" Content="Buscar:"/>
+                                <Label Foreground="White" FontWeight="Bold" Width="97" Content="Buscar:"/>
                                 <TextBox x:Name="txbBuscar"  Height="20" Width="180"  TextChanged="txbBuscar_TextChanged"/>
                             </WrapPanel>
 
@@ -187,44 +187,44 @@
 
 
                         <WrapPanel Orientation="Horizontal" Margin="10,10,0,10" RenderTransformOrigin="0.5,0.313">
-                            <Label FontWeight="Bold" Margin="0,10,0,94" Content="Cantidad:" Height="26"/>
+                            <Label Foreground="White"  FontWeight="Bold" Margin="0,10,0,94" Content="Cantidad:" Height="26"/>
                             <TextBox x:Name="txbCantidadVP" Width="100" Margin="0,10,0,94" Height="27"/>
                         </WrapPanel>
 
                         <WrapPanel RenderTransformOrigin="0.493,-1.433" Margin="10,53,0,52">
-                            <Button x:Name="btnAgregarVenta" Width="80" Click="BtnAgregarVenta_Click" Background="#00796B">
+                            <Button x:Name="btnAgregarVenta" Width="80" Click="BtnAgregarVenta_Click" Background="Black">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label>Agregar</Label>
+                                    <Label Foreground="White" >Agregar</Label>
                                     <Image Source="/Imagenes/basket_put.png" Height="16"></Image>
                                 </StackPanel>
                             </Button>
-                            <Button x:Name="btnEliminarVenta" Width="80" Click="BtnEliminarVenta_Click" Background="#00796B">
+                            <Button x:Name="btnEliminarVenta" Width="80" Click="BtnEliminarVenta_Click" Background="Black">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label>Eliminar</Label>
+                                    <Label Foreground="White" >Eliminar</Label>
                                     <Image Source="/Imagenes/basket_delete.png" Height="16"></Image>
                                 </StackPanel>
                             </Button>
-                            <Button x:Name="btnCancelarVenta" Width="80" Click="BtnCancelarVenta_Click" Background="#00796B">
+                            <Button x:Name="btnCancelarVenta" Width="80" Click="BtnCancelarVenta_Click" Background="Black">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label>Cancelar</Label>
+                                    <Label Foreground="White" >Cancelar</Label>
                                     <Image Source="/Imagenes/basket_remove.png" Height="16"></Image>
                                 </StackPanel>
                             </Button>
-                            <Button x:Name="btnRealizarVenta" Width="80" Click="BtnRealizarVenta_Click" Background="#00796B">
+                            <Button x:Name="btnRealizarVenta" Width="80" Click="BtnRealizarVenta_Click" Background="Black">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label>Venta</Label>
+                                    <Label Foreground="White" >Venta</Label>
                                     <Image Source="/Imagenes/basket_go.png" Height="16"></Image>
                                 </StackPanel>
                             </Button>
-                            <Button  x:Name="btnNuevaVenta" Width="80" Click="BtnNuevaVenta_Click" Background="#00796B">
+                            <Button  x:Name="btnNuevaVenta" Width="80" Click="BtnNuevaVenta_Click" Background="Black">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label>Nuevo</Label>
+                                    <Label Foreground="White" >Nuevo</Label>
                                     <Image Source="/Imagenes/basket_add.png" Height="16"></Image>
                                 </StackPanel>
                             </Button>
-                            <Button x:Name="btnVentasRegresar" Width="80" Click="BtnVentasRegresar_Click" Background="#00796B">
+                            <Button x:Name="btnVentasRegresar" Width="80" Click="BtnVentasRegresar_Click" Background="Black">
                                 <StackPanel Orientation="Horizontal">
-                                    <Label>Menu</Label>
+                                    <Label Foreground="White" >Menu</Label>
                                     <Image Source="/Imagenes/arrow_undo.png" Height="16"></Image>
                                 </StackPanel>
                             </Button>
@@ -241,7 +241,7 @@
 
 
 
-            <TabItem Header="Proveedores" Background="#00796B">
+            <TabItem Header="Proveedores" Background="Gray" Foreground="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -249,39 +249,39 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <WrapPanel Grid.Row="0">
-                        <Button x:Name="btnNuevoProveedor" Width="80" Click="BtnNuevoProveedor_Click" Background="#00796B">
+                        <Button x:Name="btnNuevoProveedor" Width="80" Click="BtnNuevoProveedor_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Nuevo</Label>
+                                <Label Foreground="White" >Nuevo</Label>
                                 <Image Source="/Imagenes/lorry_add.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnEditarProveedor" Width="80" Click="BtnEditarProveedor_Click" Background="#00796B">
+                        <Button x:Name="btnEditarProveedor" Width="80" Click="BtnEditarProveedor_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Editar</Label>
+                                <Label Foreground="White" >Editar</Label>
                                 <Image Source="/Imagenes/lorry_error.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnGuardarProveedor" Width="80" Click="BtnGuardarProveedor_Click" Background="#00796B">
+                        <Button x:Name="btnGuardarProveedor" Width="80" Click="BtnGuardarProveedor_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Guardar</Label>
+                                <Label Foreground="White" >Guardar</Label>
                                 <Image Source="/Imagenes/lorry_go.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnCancelarProveedor" Width="80" Click="BtnCancelarProveedor_Click" Background="#00796B">
+                        <Button x:Name="btnCancelarProveedor" Width="80" Click="BtnCancelarProveedor_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Cancelar</Label>
+                                <Label Foreground="White" >Cancelar</Label>
                                 <Image Source="/Imagenes/cancel.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnEliminarProveedor" Width="80" Click="BtnEliminarProveedor_Click" Background="#00796B">
+                        <Button x:Name="btnEliminarProveedor" Width="80" Click="BtnEliminarProveedor_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Eliminar</Label>
+                                <Label Foreground="White" >Eliminar</Label>
                                 <Image Source="/Imagenes/lorry_delete.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnProveedoresRegresar" Width="80" Click="BtnProveedoresRegresar_Click" Background="#00796B">
+                        <Button x:Name="btnProveedoresRegresar" Width="80" Click="BtnProveedoresRegresar_Click" Background="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Menu</Label>
+                                <Label Foreground="White" >Menu</Label>
                                 <Image Source="/Imagenes/arrow_undo.png" Height="16"></Image>
                             </StackPanel>
                         </Button>
@@ -340,7 +340,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="Reportes" Background="#00796B">
+            <TabItem Header="Reportes" Background="Gray" Foreground="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -351,31 +351,31 @@
                     <DataGrid Background="#BDBDBD" x:Name="dtgAlmacenReportes" MouseDoubleClick="DtgAlmacenReportes_MouseDoubleClick" Margin="8" IsReadOnly="True" Height="250"></DataGrid>
                     <WrapPanel Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2">
                         <StackPanel Orientation="Horizontal">
-                            <Label FontWeight="Bold" Width="140">Folio</Label>
+                            <Label Foreground="White"  FontWeight="Bold" Width="140">Folio</Label>
                             <TextBox x:Name="txbFolioAlmacen"  Height="20" Width="180" IsReadOnly="True"></TextBox>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label FontWeight="Bold" Width="140">Fecha</Label>
+                            <Label Foreground="White"  FontWeight="Bold" Width="140">Fecha</Label>
                             <TextBox x:Name="txbFechaAlmacen"  Height="20" Width="180" IsReadOnly="True"></TextBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
-                            <Label FontWeight="Bold" Width="140">Total:</Label>
+                            <Label Foreground="White" FontWeight="Bold" Width="140">Total:</Label>
                             <TextBox x:Name="txbTotalAlmacen"  Height="20" Width="180" IsReadOnly="True"></TextBox>
                         </StackPanel>
                     </WrapPanel>
                     <WrapPanel Grid.Row="3" Margin="457,5,430,148" HorizontalAlignment="Center" Width="195">
 
-                        <Button x:Name="btnLimpiarReportes" Height="29" Width="94" Margin="2" Click="BtnLimpiarReportes_Click" Background="#00796B" Foreground="White">
+                        <Button x:Name="btnLimpiarReportes" Height="29" Width="94" Margin="2" Click="BtnLimpiarReportes_Click" Background="Black" Foreground="White">
                             <StackPanel Orientation="Horizontal">
-                                <Label Height="28">Limpiar</Label>
+                                <Label Foreground="White" Height="28">Limpiar</Label>
                                 <Image Source="/Imagenes/lorry_error.png" Height="16"></Image>
 
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnEliminarReporte" Height="29" Width="88" Margin="2" Click="BtnEliminarReporte_Click" Background="#00796B" Foreground="White">
+                        <Button x:Name="btnEliminarReporte" Height="29" Width="88" Margin="2" Click="BtnEliminarReporte_Click" Background="Black" Foreground="White">
                             <StackPanel Orientation="Horizontal" >
-                                <Label Height="28">Eliminar</Label>
+                                <Label Foreground="White" Height="28">Eliminar</Label>
                                
                                 <Image Source="/Imagenes/cancel.png" Height="16"></Image>
                             </StackPanel>
