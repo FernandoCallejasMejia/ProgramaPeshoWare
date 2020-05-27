@@ -11,7 +11,6 @@ namespace PeshoWare.COMMON.Entidades
         public string ProductoVenta { get; set; }
         public string DescripcionVenta { get; set; }
         public float PrecioVenta { get; set; }
-        //public string Stock { get; set; }
         public int CantidadVenta { get; set; }
         public float TotalVenta { get; set; }
     }

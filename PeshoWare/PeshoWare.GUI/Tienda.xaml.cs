@@ -558,32 +558,6 @@ namespace PeshoWare.GUI
                     dtgVenta.ItemsSource = null;
                     dtgVenta.ItemsSource = venta;
                 };
-               
-
-                /* Venta v = dtgVenta.SelectedItem as Venta;
-                 foreach (var item in venta)
-                 {
-                     if (item.ProductoVenta == v.ProductoVenta && item.PrecioVenta == v.PrecioVenta)
-                     {
-                         Articulo articulo = ManejadorArticulo.Listar.Where(p => p.NombreArticulo == item.ProductoVenta).SingleOrDefault();
-                         articulo.CantidadArticulo = (int.Parse(articulo.CantidadArticulo) + item.CantidadVenta).ToString();
-                         ManejadorArticulo.Modificar(articulo);
-                     }
-                 }
-                 if (v != null)
-                 {
-                     venta.Remove(v);
-                     ActualizarTablaArticulo();
-                     ActualizarTablas();
-                     dtgVenta.ItemsSource = null;
-                     dtgVenta.ItemsSource = venta;
-                 }
-                 else
-                 {
-                     MessageBox.Show("No selecciono nada en la tabla en Venta", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
-                     return;
-                 }*/
-
             }
             else
             {
@@ -640,13 +614,6 @@ namespace PeshoWare.GUI
             informacion = string.Format("\nSubtotal: ${0}\nIva: ${1}\n Total: ${2}\n\n   ¡¡¡Vuelva pronto!!!", SubTotal.ToString(), IvaIncluido.ToString(), TotalVenta.ToString());
             reporte.Guardar(datos + elementos + informacion);
             MessageBox.Show("Subtotal: " + SubTotal.ToString() + " \nIva " + (IvaIncluido).ToString() + " \nTotal " + TotalVenta.ToString() + "\nReporte Guardado con Exito: " + txbFolioVenta.Text + ".txt", "Total de la Venta", MessageBoxButton.OK, MessageBoxImage.Information);
-            //Articulo a = dtgVentaAlmacen.SelectedItem as Articulo;
-            //Venta v = new Venta();
-            //a.CantidadArticulo = (int.Parse(a.CantidadArticulo) - int.Parse(txbCantidadVP.Text)) + "";
-            //ManejadorArticulo.Modificar(a);
-            //ActualizarTablas();
-            //ActualizarTablaArticulo();
-            //txbCantidadVP.Clear();
             try
             {
                 InventarioVenta Ventas = new InventarioVenta()
