@@ -15,7 +15,7 @@
                 <TextBox x:Name="txbUsuarioLog" Height="25"></TextBox>
                 <Label Foreground="White" FontWeight="Bold">Contraseña:</Label>
                 <PasswordBox x:Name="txbContraseniaLog" Height="25"></PasswordBox>
-                <Button x:Name="btnLogIn" Height="30" Margin="60 20" Click="btnLogIn_Click" Foreground="White" Background="Black">Iniciar</Button>
+                <Button x:Name="btnLogIn" Height="30" Margin="60 20" Click="btnLogIn_Click" Foreground="White" Background="#FF504CA4">Iniciar</Button>
             </StackPanel>
         </Border>
     </Grid>
