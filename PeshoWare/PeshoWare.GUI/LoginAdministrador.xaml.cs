@@ -33,7 +33,7 @@ namespace PeshoWare.GUI
 
             }
 
-            if (txbUsuarioLog.Text == "Administrador" && txbContraseniaLog.Password == "administrador")
+            if (txbUsuarioLog.Text == "Administrador" && txbContraseniaLog.Password == "admin")
             {
                 Administrador b = new Administrador();
                 b.Show();
