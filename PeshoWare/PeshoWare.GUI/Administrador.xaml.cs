@@ -66,9 +66,7 @@ namespace PeshoWare.GUI
         {
             btnPagoCancelar.IsEnabled = value;
             btnPagoEditar.IsEnabled = !value;
-            //btnPagoEliminar.IsEnabled = !value;
             btnPagoGuardar.IsEnabled = value;
-            //btnPagoNuevo.IsEnabled = !value;
             txtClientePago.IsEnabled = value;
             txbAbono.IsEnabled = value;
             txbFechaPago.IsEnabled = value;
@@ -109,7 +107,6 @@ namespace PeshoWare.GUI
         private void BotonesPrestamoEdicion(bool value)
         {
             btnPrestamoCancelar.IsEnabled = value;
-            //btnPrestamoEditar.IsEnabled = !value;
             btnPrestamoGuardar.IsEnabled = value;
             btnPrestamoNuevo.IsEnabled = !value;
             btnPrestamoEliminar.IsEnabled = !value;
@@ -195,7 +192,7 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado algun registro", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -204,7 +201,7 @@ namespace PeshoWare.GUI
         {
             if (string.IsNullOrEmpty(txbNombreUsuario.Text) || string.IsNullOrEmpty(txbContraseniaUsuario.Text) || string.IsNullOrEmpty(cmbUsuarioTipo.Text))
             {
-                MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("asegurese de llenar todos los campos", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
 
@@ -218,14 +215,14 @@ namespace PeshoWare.GUI
                 };
                 if (ManejadorUsuario.Agregar(usu))
                 {
-                    MessageBox.Show("Usuario agregado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Usuario agregado correctamente", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposUsuario();
                     ActualizarTablaUsuario();
                     BotonesUsuarioEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Usuario no pudo ser agregado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Usuario no pudo ser agregado", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -236,14 +233,14 @@ namespace PeshoWare.GUI
                 usu.Contrasenia = txbContraseniaUsuario.Text;
                 if (ManejadorUsuario.Modificar(usu))
                 {
-                    MessageBox.Show("Usuario modificado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Usuario modificado correctamente", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposUsuario();
                     ActualizarTablaUsuario();
                     BotonesUsuarioEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Usuario no pudo ser actualizado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Usuario no pudo ser actualizado", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -259,22 +256,22 @@ namespace PeshoWare.GUI
             Usuario usu = dtgUsuarios.SelectedItem as Usuario;
             if (usu != null)
             {
-                if (MessageBox.Show("Realmente desea eliminar este Usuario?", "Inventarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Realmente desea eliminar este Usuario?", "Usuarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     if (ManejadorUsuario.Eliminar(usu.Id))
                     {
-                        MessageBox.Show("Usuario eliminado", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Usuario eliminado", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Information);
                         ActualizarTablaUsuario();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar el Usuario", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("No se pudo eliminar el Usuario", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado algun registro", "Usuarios", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -296,12 +293,13 @@ namespace PeshoWare.GUI
                 txbApellidosCliente.Text = cli.ApellidosCliente;
                 txbTelefonoCliente.Text = cli.TelefonoCliente;
                 txbCorreoCliente.Text = cli.CorreoCliente;
+
                 accionCliente = accion.Editar;
                 BotonesClienteEdicion(true);
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado un registro", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -310,14 +308,14 @@ namespace PeshoWare.GUI
         {
             if (string.IsNullOrEmpty(txbNombreCliente.Text) || string.IsNullOrEmpty(txbApellidosCliente.Text) || string.IsNullOrEmpty(txbTelefonoCliente.Text))
             {
-                MessageBox.Show("Faltan datos, asegurese de agregar el telefono", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Faltan datos, asegurese de agregar el nombre, apellidos, telefono, ", "Clientes", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
             foreach (var item in txbTelefonoCliente.Text)
             {
                 if (!(char.IsNumber(item)))
                 {
-                    MessageBox.Show("Error en el Telefono, solo ingrese numeros", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error en el Telefono, solo ingrese numeros", "Clientes", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -333,14 +331,14 @@ namespace PeshoWare.GUI
                 };
                 if (ManejadorCliente.Agregar(cli))
                 {
-                    MessageBox.Show("Cliente agregado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Cliente agregado correctamente", "Clientes", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposCliente();
                     ActualizarTablaCliente();
                     BotonesClienteEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Cliente no pudo ser agregado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Cliente no pudo ser agregado", "Clientes", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -352,14 +350,14 @@ namespace PeshoWare.GUI
                 cli.CorreoCliente = txbCorreoCliente.Text;
                 if (ManejadorCliente.Modificar(cli))
                 {
-                    MessageBox.Show("Cliente modificado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Cliente modificado correctamente", "Clientes", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposCliente();
                     ActualizarTablaCliente();
                     BotonesClienteEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Cliente no pudo ser actualizado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Cliente no pudo ser actualizado", "Clientes", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -375,22 +373,22 @@ namespace PeshoWare.GUI
             Cliente cli = dtgClientes.SelectedItem as Cliente;
             if (cli != null)
             {
-                if (MessageBox.Show("Realmente desea eliminar este Cliente?", "Inventarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Realmente desea eliminar este Cliente?", "Clientes", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     if (ManejadorCliente.Eliminar(cli.Id))
                     {
-                        MessageBox.Show("Cliente eliminado", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Cliente eliminado", "Clientes", MessageBoxButton.OK, MessageBoxImage.Information);
                         ActualizarTablaCliente();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar el Cliente", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("No se pudo eliminar el Cliente", "Clientes", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado un registro", "Clientes", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -402,38 +400,18 @@ namespace PeshoWare.GUI
             accionPrestamo = accion.Nuevo;
         }
 
-       /* private void BtnPrestamoEditar_Click(object sender, RoutedEventArgs e)
-        {
-            Prestamo pre = dtgPrestamos.SelectedItem as Prestamo;
-            if (pre != null)
-            {
-                txbPrestamoId.Text = pre.Id;
-                cmbClientePrestamo.Text = pre.N_ClientePrestamo;
-                txbMonto.Text = pre.Monto.ToString();
-                txbFechaPrestamo.Text = pre.FechaPrestamo.ToString();
-                accionPrestamo = accion.Editar;
-                ActualizarTablaPago();
-                BotonesPrestamoEdicion(true);
-            }
-            else
-            {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-        }
-        */
         private void BtnPrestamoGuardar_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(cmbClientePrestamo.Text) || string.IsNullOrEmpty(txbMonto.Text))
             {
-                MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Faltan datos, asegurese de ingresar el cliente y monto", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
             foreach (var item in txbMonto.Text)
             {
                 if (!(char.IsNumber(item)))
                 {
-                    MessageBox.Show("Error en el Monto, solo ingrese numeros", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error en el Monto, solo ingrese numeros", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -448,7 +426,7 @@ namespace PeshoWare.GUI
                 };
                 if (ManejadorPrestamo.Agregar(pre))
                 {
-                    MessageBox.Show("Prestamo agregado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Prestamo agregado correctamente", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposPrestamo();
                     ActualizarTablaPrestamo();
                     ActualizarTablaPago();
@@ -456,7 +434,7 @@ namespace PeshoWare.GUI
                 }
                 else
                 {
-                    MessageBox.Show("El Prestamo no pudo ser agregado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Prestamo no pudo ser agregado", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -467,7 +445,7 @@ namespace PeshoWare.GUI
                 pre.FechaPrestamo = DateTime.Now;
                 if (ManejadorPrestamo.Modificar(pre))
                 {
-                    MessageBox.Show("Prestamo modificado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Prestamo modificado correctamente", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposPrestamo();
                     ActualizarTablaPrestamo();
                     ActualizarTablaPago();
@@ -475,7 +453,7 @@ namespace PeshoWare.GUI
                 }
                 else
                 {
-                    MessageBox.Show("El Prestamo no pudo ser actualizado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Prestamo no pudo ser actualizado", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -496,14 +474,13 @@ namespace PeshoWare.GUI
                 txtClientePago.Text = pag.N_ClientePrestamo;
                 txbAbono.Text = "0";
                 txbFechaPago.Text = pag.FechaPago.ToString();
-                //txbMonto.Text = pag.Monto.ToString();
 
                 accionPago = accion.Editar;
                 BotonesPagoEdicion(true);
             }
             else
             {
-                MessageBox.Show("Por favor seleccion el CLIENTE que se le realizara el Abono o Pago", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Por favor seleccion el CLIENTE que se le realizara el Abono o Pago", "Pagos", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
         }
@@ -512,14 +489,14 @@ namespace PeshoWare.GUI
         {
             if (string.IsNullOrEmpty(txtClientePago.Text) || string.IsNullOrEmpty(txbAbono.Text))
             {
-                MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Faltan datos, asegurese de tener el campo de cliente y abono", "Pagos", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
             foreach (var item in txbAbono.Text)
             {
                 if (!(char.IsNumber(item)))
                 {
-                    MessageBox.Show("Error en el Abono, solo ingrese numeros", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error en el Abono, solo ingrese numeros", "Pagos", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -530,24 +507,19 @@ namespace PeshoWare.GUI
                 {
                     N_ClientePrestamo = txtClientePago.Text,
                     Abono = float.Parse(txbAbono.Text),
-                    // Monto = float.Parse(txbAbono.Text) - float.Parse(txbMonto.Text),
                     FechaPago = DateTime.Now
                 };
-                //if (int.Parse(pag.Monto.ToString()) < int.Parse(txbAbono.Text))
-                //{
-                //    MessageBox.Show("El Abono sobrepasa el monto", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
-                //    return;
-                //}
+
                 if (ManejadorPrestamo.Agregar(pag))
                 {
-                    MessageBox.Show("Pago agregado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Pago agregado correctamente", "Pagos", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposPago();
                     ActualizarTablaPago();
                     BotonesPagoEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Pago no pudo ser agregado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Pago no pudo ser agregado", "Pagos", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -555,20 +527,19 @@ namespace PeshoWare.GUI
                 Prestamo pag = dtgPagos.SelectedItem as Prestamo;
                 pag.N_ClientePrestamo = txtClientePago.Text;
                 pag.Abono = float.Parse(txbAbono.Text);
-                //pag.Monto = float.Parse(pag.Monto);
                 pag.Monto = pag.Monto - int.Parse(txbAbono.Text);
                 pag.FechaPago = DateTime.Now;
 
                 if (ManejadorPrestamo.Modificar(pag))
                 {
-                    MessageBox.Show("Pago agregado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Pago agregado correctamente", "iPagos", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposPago();
                     ActualizarTablaPago();
                     BotonesPagoEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Pago no pudo ser actualizado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Pago no pudo ser actualizado", "Pagos", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -578,12 +549,6 @@ namespace PeshoWare.GUI
             LimpiarCamposPago();
             BotonesPagoEdicion(false);
         }
-
-        /*private void BtnPagoEliminar_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        */
 
         private void BtnUsuarioRegresar_Click(object sender, RoutedEventArgs e)
         {
@@ -618,22 +583,22 @@ namespace PeshoWare.GUI
             Prestamo pre = dtgPrestamos.SelectedItem as Prestamo;
             if (pre != null)
             {
-                if (MessageBox.Show("Realmente desea eliminar este Prestamo?", "Inventarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Realmente desea eliminar este Prestamo?", "Prestamos", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     if (ManejadorPrestamo.Eliminar(pre.Id))
                     {
-                        MessageBox.Show("Prestamo eliminado", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Prestamo eliminado", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Information);
                         ActualizarTablaPrestamo();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar el Prestamo", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("No se pudo eliminar el Prestamo", "Prstamos", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No a seleccionado un registro", "Prestamos", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
             ActualizarTablaPago();

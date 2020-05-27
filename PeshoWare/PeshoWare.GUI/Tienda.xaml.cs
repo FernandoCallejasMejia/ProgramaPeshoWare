@@ -207,7 +207,7 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se ha seleccionado un registro", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -216,14 +216,14 @@ namespace PeshoWare.GUI
         {
             if (string.IsNullOrEmpty(txbNombreProveedor.Text) || string.IsNullOrEmpty(txbProveedorTelefono.Text) || string.IsNullOrEmpty(txbProveedorDireccion.Text))
             {
-                MessageBox.Show("Falta el nombre del proveedor, el telefono o la direccion", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("asegurese de tener los siguientes campos ingresados nombre, telefono, direccion", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             foreach (var item in txbProveedorTelefono.Text)
             {
                 if (!(char.IsNumber(item)))
                 {
-                    MessageBox.Show("Error en el Telefono, solo ingrese numeros", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error al ingresar el Telefono, asegurese de solo ingresar numeros", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -239,14 +239,14 @@ namespace PeshoWare.GUI
                 };
                 if (ManejadorProveedor.Agregar(pro))
                 {
-                    MessageBox.Show("Proveedor agregado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Proveedor agregado correctamente", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposProveedor();
                     ActualizarTablaProveedor();
                     BotonesProveedorEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Proveedor no pudo ser agregado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Proveedor no pudo ser agregado", "proveedores", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -258,14 +258,14 @@ namespace PeshoWare.GUI
                 pro.DireccionProveedor = txbProveedorDireccion.Text;
                 if (ManejadorProveedor.Modificar(pro))
                 {
-                    MessageBox.Show("Proveedor modificado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Proveedor modificado correctamente", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposProveedor();
                     ActualizarTablaProveedor();
                     BotonesProveedorEdicion(false);
                 }
                 else
                 {
-                    MessageBox.Show("El Proveedor no pudo ser actualizado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Proveedor no pudo ser actualizado", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -281,22 +281,22 @@ namespace PeshoWare.GUI
             Proveedor pro = dtgProveedores.SelectedItem as Proveedor;
             if (pro != null)
             {
-                if (MessageBox.Show("Realmente desea eliminar este Proveedor?", "Inventarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Realmente desea eliminar este Proveedor?", "Proveedores", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     if (ManejadorProveedor.Eliminar(pro.Id))
                     {
-                        MessageBox.Show("Proveedor eliminado", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Proveedor eliminado", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Information);
                         ActualizarTablaProveedor();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar el Usuario", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("No se pudo eliminar el Proveedor", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se ha seleccionado un registro", "Proveedores", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -360,7 +360,7 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado un registro", "Productos", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -369,14 +369,14 @@ namespace PeshoWare.GUI
         {
             if (string.IsNullOrEmpty(txbNombreProducto.Text) || string.IsNullOrEmpty(cmbProveedor.Text) || string.IsNullOrEmpty(txbPrecioCompra.Text) || string.IsNullOrEmpty(txbPrecioVenta.Text) || string.IsNullOrEmpty(txbCantidad.Text))
             {
-                MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Asegurese de ingresar los siguientes datos: nombre, proveedor, compra, venta, cantidad", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             foreach (var item in txbPrecioCompra.Text)
             {
                 if (!(char.IsNumber(item)))
                 {
-                    MessageBox.Show("Error en el precio de compra, solo ingrese numeros", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error en el precio de compra, solo ingrese numeros", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -384,7 +384,7 @@ namespace PeshoWare.GUI
             {
                 if (!(char.IsNumber(item)))
                 {
-                    MessageBox.Show("Error en el precio de venta, solo ingrese numeros", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error en el precio de venta, solo ingrese numeros", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -392,7 +392,7 @@ namespace PeshoWare.GUI
             {
                 if (!(char.IsNumber(item)))
                 {
-                    MessageBox.Show("Error en la cantidad, solo ingrese numeros", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error en la cantidad, solo ingrese numeros", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -411,7 +411,7 @@ namespace PeshoWare.GUI
                 };
                 if (ManejadorArticulo.Agregar(ar))
                 {
-                    MessageBox.Show("Producto agregado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Producto agregado correctamente", "Productos", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposArticulo();
                     ActualizarTablaArticulo();
                     BotonesArticuloEdicion(false);
@@ -419,7 +419,7 @@ namespace PeshoWare.GUI
                 }
                 else
                 {
-                    MessageBox.Show("El Producto no pudo ser agregado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Producto no pudo ser agregado", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -434,7 +434,7 @@ namespace PeshoWare.GUI
                 ar.ImagenArticulo = ImageToByte(imgArticulo.Source);
                 if (ManejadorArticulo.Modificar(ar))
                 {
-                    MessageBox.Show("Producto modificado correctamente", "inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Producto modificado correctamente", "Productos", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCamposArticulo();
                     ActualizarTablaArticulo();
                     BotonesArticuloEdicion(false);
@@ -442,7 +442,7 @@ namespace PeshoWare.GUI
                 }
                 else
                 {
-                    MessageBox.Show("El Producto no pudo ser actualizado", "inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Producto no pudo ser actualizado", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -458,23 +458,23 @@ namespace PeshoWare.GUI
             Articulo ar = dtgProductos.SelectedItem as Articulo;
             if (ar != null)
             {
-                if (MessageBox.Show("Realmente desea eliminar este Producto?", "Inventarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Realmente desea eliminar este Producto?", "Productos", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     if (ManejadorArticulo.Eliminar(ar.Id))
                     {
-                        MessageBox.Show("Producto eliminado", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Producto eliminado", "Productos", MessageBoxButton.OK, MessageBoxImage.Information);
                         ActualizarTablaArticulo();
                         ActualizarTablas();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar el Producto", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("No se pudo eliminar el Producto", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No ha seleccionado nada", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado un registro", "Productos", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
         }
@@ -498,7 +498,7 @@ namespace PeshoWare.GUI
             {
                 if (string.IsNullOrEmpty(txbCantidadVP.Text))
                 {
-                    MessageBox.Show("No ha llenado el Campo de cantidad", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("No se ha llenado el Campo de cantidad", "Ventas", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     return;
                 }
                 foreach (var item in txbCantidadVP.Text)
@@ -531,7 +531,7 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("No selecciono nada en la tabla", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado algun producto", "Ventas", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
@@ -561,14 +561,14 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("No selecciono nada en la tabla en Venta", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se a seleccionado algun registro de venta", "Ventas", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }
 
         private void BtnCancelarVenta_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Realmente esta seguro de cancelar la venta", "Inventarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Realmente esta seguro de cancelar la venta", "Ventas", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 foreach (var item in venta)
                 {
@@ -591,7 +591,7 @@ namespace PeshoWare.GUI
             BotonesVentaEdicion(false);
             if (venta.Count <= 0)
             {
-                MessageBox.Show("No a seleccionado un producto", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("No se a seleccionado un producto", "Ventas", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
 
@@ -661,7 +661,7 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("No se pudo seleccionar la opcion, intente de nuevo", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se pudo seleccionar la opcion, intente de nuevo", "Reportes", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
         }
@@ -676,7 +676,7 @@ namespace PeshoWare.GUI
             InventarioVenta a = dtgAlmacenReportes.SelectedItem as InventarioVenta;
             if (a != null)
             {
-                if (MessageBox.Show("Realmente desea eliminar el campo", "Inventarios", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Realmente desea eliminar el campo", "Reportes", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     ManejadorTicket.Eliminar(a.Id);
                     TablaReportes();
@@ -685,7 +685,7 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("Por favor seleccione un venta de la tabla , intente de nuevo", "Inventarios", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Por favor seleccione una venta de la tabla , intente de nuevo", "Reportes", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
         }

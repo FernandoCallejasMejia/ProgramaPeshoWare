@@ -70,7 +70,7 @@ namespace PeshoWare.GUI
             }
             else
             {
-                MessageBox.Show("No ha seleccionado ningun usuario", "Usario", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No ha seleccionado ningun usuario", "Usario", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
 
         }

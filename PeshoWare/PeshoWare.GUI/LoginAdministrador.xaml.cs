@@ -28,7 +28,7 @@ namespace PeshoWare.GUI
         {
             if (string.IsNullOrEmpty(txbContraseniaLog.Password) || string.IsNullOrEmpty( txbUsuarioLog.Text))
             {
-                MessageBox.Show("Favor  de llenar los dos campos ", "Usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Asegurese de llenar los campos ", "Usuario", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
 
             }
